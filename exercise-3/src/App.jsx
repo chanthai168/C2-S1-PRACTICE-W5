@@ -3,6 +3,7 @@ import { ALL_PNV_TEACHERS } from "./teachers.js";
 
 // NO change to perform here...
 export function User({ user }) {
+  console.log(user)
   return (
     <div id="user" data-testid="user">
       <h2>
@@ -18,7 +19,7 @@ function App() {
     <div id="app">
       <h1>PNV Team !!</h1>
       <p>Here are some PNV trainers and educators, do you know them?</p>
-      <User /> {/* How to loop on ALL_PNV_TEACHERS list ? */}
+      {ALL_PNV_TEACHERS.map((user,index)=> <User user={user} key={index}/>)}
     </div>
   );
 }
